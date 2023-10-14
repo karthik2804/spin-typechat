@@ -1,0 +1,17 @@
+spin_manifest_version = "1"
+authors = ["karthik2804 <karthik.ganeshram@fermyon.com>"]
+description = ""
+name = "typechat-ai"
+trigger = { type = "http", base = "/" }
+version = "0.1.0"
+
+[[component]]
+id = "typechat-ai"
+source = "target/typechat-ai.wasm"
+exclude_files = ["**/node_modules"]
+ai_models = ["llama2-chat"]
+files = ["src/**/*"]
+[component.trigger]
+route = "/..."
+[component.build]
+command = "npm run build"
